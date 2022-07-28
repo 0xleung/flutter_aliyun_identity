@@ -1,0 +1,29 @@
+PODS:
+  - AliyunIdentityPlatform (1.2.4)
+  - Flutter (1.0.0)
+  - flutter_aliyun_identity (0.0.1):
+    - AliyunIdentityPlatform (~> 1.2.4)
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_aliyun_identity (from `.symlinks/plugins/flutter_aliyun_identity/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AliyunIdentityPlatform
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_aliyun_identity:
+    :path: ".symlinks/plugins/flutter_aliyun_identity/ios"
+
+SPEC CHECKSUMS:
+  AliyunIdentityPlatform: 0465f269b087199bbf0c9b5defbef5705ac629a1
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  flutter_aliyun_identity: 3384dcec5bdd6813d652d96daddb908ecb09b2d7
+
+PODFILE CHECKSUM: 77820230a2c0e250d1bf7694e7ea6c91a63c1edd
+
+COCOAPODS: 1.11.3

@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -32,7 +33,8 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await _flutterAliyunIdentityPlugin.getPlatformVersion() ?? 'Unknown platform version';
+          await _flutterAliyunIdentityPlugin.getPlatformVersion() ??
+              'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -55,7 +57,22 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: [
+              Text('Running on: $_platformVersion\n'),
+              TextButton(
+                  onPressed: () async {
+                    bool rr = await _flutterAliyunIdentityPlugin.realInstall();
+                    Map meta =
+                        await _flutterAliyunIdentityPlugin.realMetaInfos();
+
+                    bool rrr =
+                        await _flutterAliyunIdentityPlugin.realVerify('id');
+                    print(rrr);
+                  },
+                  child: Text('verfy'))
+            ],
+          ),
         ),
       ),
     );

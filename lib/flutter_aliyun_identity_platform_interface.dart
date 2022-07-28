@@ -8,13 +8,14 @@ abstract class FlutterAliyunIdentityPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterAliyunIdentityPlatform _instance = MethodChannelFlutterAliyunIdentity();
+  static FlutterAliyunIdentityPlatform _instance =
+      MethodChannelFlutterAliyunIdentity();
 
   /// The default instance of [FlutterAliyunIdentityPlatform] to use.
   ///
   /// Defaults to [MethodChannelFlutterAliyunIdentity].
   static FlutterAliyunIdentityPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [FlutterAliyunIdentityPlatform] when
   /// they register themselves.
@@ -25,5 +26,20 @@ abstract class FlutterAliyunIdentityPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<bool> realInstall() async {
+    final bool rst = await instance.realInstall();
+    return rst;
+  }
+
+  Future<Map> realMetaInfos() async {
+    final Map info = await instance.realMetaInfos();
+    return info;
+  }
+
+  Future<bool> realVerify(String id) async {
+    final bool rst = await instance.realVerify(id);
+    return rst;
   }
 }

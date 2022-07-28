@@ -8,6 +8,8 @@
 #import "flutter_aliyun_identity-Swift.h"
 #endif
 
+#import <AliyunIdentityPlatform/AliyunIdentityPlatform.h>
+
 @implementation FlutterAliyunIdentityPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftFlutterAliyunIdentityPlugin registerWithRegistrar:registrar];
