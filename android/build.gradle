@@ -16,6 +16,9 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+            flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -32,4 +35,32 @@ android {
     defaultConfig {
         minSdkVersion 16
     }
+}
+
+
+dependencies {
+//    阿里云实人认证SDK
+    // implementation files('libs/aliyun-ai-core-10.1.80.20191119165705.aar')
+    // implementation files('libs/aliyun-ai-xnn-10.1.80.20191126150041.aar')
+    // implementation files('libs/aliyun-identitycrypto-1.0.1.aar')
+    // implementation files('libs/aliyun-identityface-1.1.1.aar')
+    // implementation files('libs/aliyun-identityocr-1.1.3.aar')
+    // implementation files('libs/aliyun-identityplatform-1.2.5.aar')
+    // implementation files('libs/Android-AliyunDevice-FG-10022.1.aar')
+    implementation (name:"aliyun-ai-core-10.1.80.20191119165705",ext:"aar")
+    implementation (name:"aliyun-ai-xnn-10.1.80.20191126150041",ext:"aar")
+    implementation (name:"aliyun-identitycrypto-1.0.1",ext:"aar")
+    implementation (name:"aliyun-identityface-1.1.1",ext:"aar")
+    implementation (name:"aliyun-identityocr-1.1.3",ext:"aar")
+    implementation (name:"aliyun-identityplatform-1.2.5",ext:"aar")
+    implementation (name:"Android-AliyunDevice-FG-10022.1",ext:"aar")
+
+//    三方依赖库
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okio:okio:1.14.0'
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
+    implementation 'com.alibaba:fastjson:1.1.72.android'
+
+    // compileOnly fileTree(dir: 'libs', include: ['*.aar'])
 }

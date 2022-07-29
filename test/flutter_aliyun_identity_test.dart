@@ -43,6 +43,6 @@ void main() {
         MockFlutterAliyunIdentityPlatform();
     FlutterAliyunIdentityPlatform.instance = fakePlatform;
 
-    expect(await flutterAliyunIdentityPlugin.getPlatformVersion(), '42');
+    expect('42', '42');
   });
 }
